@@ -26,7 +26,7 @@ export function Navbar() {
             Todo App
             </div>
             <div>
-                <p>Welcome back, {username}</p>
+                <p>Welcome, {username}</p>
                 <button className='mr-5' 
                 onClick={() => {
                     localStorage.setItem('token',null)

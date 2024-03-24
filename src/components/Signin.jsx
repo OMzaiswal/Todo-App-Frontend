@@ -1,11 +1,13 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { userState } from "../store/atoms/user";
+import { useSetRecoilState } from "recoil";
 import axios from "axios";
 
 export function Signin() {
     const [ email, setEmail ] = useState('');
     const [ password, setPassword ] = useState('');
-
+    const setUser = useSetRecoilState(userState);
     const navigate = useNavigate();
 
     return <div className="flex justify-center mt-20">
@@ -34,17 +36,21 @@ export function Signin() {
             // alert(res.data.message);
             const data = res.data;
             localStorage.setItem("token", data.token);
+            setUser({
+                username: email,
+                isLoading: false
+            })
             if(data.token){
                 navigate('/showTodos');
             } else {
-                console.log('1');
+                // console.log('1');
                 console.log(email);
-                console.log('2');
+                // console.log('2');
                 alert(res.data.message)
                 setEmail('');
                 setPassword('');
                 console.log(email);
-                console.log('3');
+                // console.log('3');
             }
             }}>Signin</button>
         </div>

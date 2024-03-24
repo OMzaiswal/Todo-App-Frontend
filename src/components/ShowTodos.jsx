@@ -26,7 +26,7 @@ function ShowTodos() {
             headers: {Authorization: `Bearer ${localStorage.getItem('token')}`}
           })
           // setTodos(todos.filter(todo => todo.id !== id));
-          alert("Todo deleted!");
+          // alert("Todo deleted!");
           window.location.reload();
       } catch (error) {
           console.error("Error deleting todo:", error);
@@ -34,23 +34,19 @@ function ShowTodos() {
       }
   };
 
-    return <div style={{display: "flex" }}>
+    return <div className="flex justify-center items-center min-h-screen bg-gray-100">
 
       <AddTodos />
 
-      <div style={{height:"500px", margin: "20px", paddingLeft: "50px", backgroundColor: "#90e0ef", border:"1px solid red"}}>
-        <h2 style={{textDecoration: "underline"}}>Your Todos</h2>
+      <div className="max-w-md mx-4 p-6 bg-white rounded-lg shadow-lg">
+        <h2 className="text-lg font-semibold mb-4">Your Todos</h2>
           {todos.map(todo => {
-            return ( <div>
+            return ( <div className="mb-4">
               {/* {todo._id}
               &nbsp;&nbsp;&nbsp;&nbsp; */}
-              {todo.title}
-              &nbsp;&nbsp;&nbsp;&nbsp;
-              ----
-              &nbsp;&nbsp;&nbsp;&nbsp;
-              {todo.description}
-              &nbsp;&nbsp;
-              <button style={{color:"red"}} onClick={ () => handleDelete(todo._id)}>Delete</button>
+              <h3 className="text-md font-semibold mb-2">{todo.title}</h3>
+              <p className="text-sm text-gray-700 mb-2">{todo.description}</p>
+              <button className="px-3 py-1 bg-red-500 text-white rounded-lg hover:bg-red-600" onClick={ () => handleDelete(todo._id)}>Delete</button>
             </div> )
           })}
       </div>
