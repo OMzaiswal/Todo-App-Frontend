@@ -60,11 +60,16 @@ export function Signup() {
             }}>Signup</button>
         </form>
         
-        <br />
+        {/* <br />
         <div className="flex justify-center">
             <button 
             onClick={() => navigate("/Signup")} >Create new account</button>
-        </div>
+        </div> */}
+        <br />
+    <div className="flex justify-center">Already have an account ? 
+       <a href="#" onClick={() => navigate("/Signin")} className="text-red-500 ml-1"> Signin here</a>
+    </div>
+    <br />
     </div>
     </div>
 }

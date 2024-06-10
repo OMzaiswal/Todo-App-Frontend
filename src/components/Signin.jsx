@@ -69,6 +69,7 @@ export function Signin() {
         <br />
         <div className="flex justify-center">
             <button 
+            className="text-red-500"
             onClick={() => navigate("/Signup")} >Create new account</button>
         </div>
     </div>
