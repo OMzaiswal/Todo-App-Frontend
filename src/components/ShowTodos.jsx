@@ -2,7 +2,7 @@ import axios from "axios";
 import { useEffect } from "react";
 import { useState } from "react";
 import AddTodos from "./AddTodos";
-import './ShowTodo.css';
+// import './ShowTodo.css';
 
 
 function ShowTodos() {

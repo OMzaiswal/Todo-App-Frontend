@@ -10,7 +10,7 @@ export function Signin() {
     const setUser = useSetRecoilState(userState);
     const navigate = useNavigate();
 
-    return <div className="min-h-screen flex items-center justify-center bg-gray-100">
+    return <div className="mt-20 flex items-center justify-center">
     <div className="max-w-md w-full p-8 bg-white rounded-lg shadow-lg">
         <h1 className="text-3xl font-semibold mb-6 text-center">Sign In</h1>
         <form className="space-y-4">
@@ -45,22 +45,23 @@ export function Signin() {
             })
             // alert(res.data.message);
             const data = res.data;
-            localStorage.setItem("token", data.token);
-            setUser({
-                username: email,
-                isLoading: false
-            })
             if(data.token){
+                localStorage.setItem("token", data.token);
+                setUser({
+                    username: email,
+                    isLoading: false
+                })
                 navigate('/showTodos');
             } else {
                 // console.log('1');
-                console.log(email);
+                // console.log(email);
                 // console.log('2');
                 alert(res.data.message)
-                setEmail('');
-                setPassword('');
-                console.log(email);
+                // setEmail('');
+                // setPassword('');
+                // console.log(email);
                 // console.log('3');
+                navigate('/signin');
             }
             }}>Signin</button>
         </form>
