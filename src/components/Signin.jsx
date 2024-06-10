@@ -53,14 +53,7 @@ export function Signin() {
                 })
                 navigate('/showTodos');
             } else {
-                // console.log('1');
-                // console.log(email);
-                // console.log('2');
                 alert(res.data.message)
-                // setEmail('');
-                // setPassword('');
-                // console.log(email);
-                // console.log('3');
                 navigate('/signin');
             }
             }}>Signin</button>
