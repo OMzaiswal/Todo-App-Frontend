@@ -50,7 +50,7 @@ export function Navbar() {
                 className="bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded-lg"
                 >Signup</button>
                 <button onClick={() => navigate('./Signin')} 
-                className="bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded-lg"
+                className="bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded-lg ml-2"
                 >Signin</button>
             </div>
         </div>
