@@ -22,7 +22,7 @@ function AddTodos() {
         ></textarea>
             <button className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600" 
             onClick={ async () => {
-                const res = await axios.post("http://localhost:3000/todos", {
+                const res = await axios.post("https://todo-api.uparkom.lol/todos", {
                     title: title,
                     description: description
                 }, {

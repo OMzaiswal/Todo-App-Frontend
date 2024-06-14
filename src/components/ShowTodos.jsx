@@ -11,7 +11,7 @@ function ShowTodos() {
   
     useEffect( () => {
       async function fetchTodos () {
-        const res = await axios.get('http://localhost:3000/todos', {
+        const res = await axios.get('https://todo-api.uparkom.lol/todos', {
           headers: { Authorization: `Bearer ${localStorage.getItem('token')}`}
         })
         setTodos(res.data);
@@ -22,7 +22,7 @@ function ShowTodos() {
 
     const handleDelete = async (id) => {
       try {
-          await axios.delete(`http://localhost:3000/todos/${id}`, {
+          await axios.delete(`https://todo-api.uparkom.lol/todos/${id}`, {
             headers: {Authorization: `Bearer ${localStorage.getItem('token')}`}
           })
           // setTodos(todos.filter(todo => todo.id !== id));

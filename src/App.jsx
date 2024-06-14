@@ -37,7 +37,7 @@ function InitUser() {
 
   const init = async () => {
     try{
-      const resp = await axios.get('http://localhost:3000/me',{
+      const resp = await axios.get('https://todo-api.uparkom.lol/me',{
         headers: {Authorization: `Bearer ${localStorage.getItem('token')}`}
       })
       if (resp.data.username) {
